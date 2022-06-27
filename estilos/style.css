@@ -57,6 +57,7 @@ body{
     background-color: #2f363e;
     border: 3px solid white;
     border-radius: 50%;
+    z-index: 100000;
 }
 
 .relogio > span{
@@ -66,4 +67,66 @@ body{
     text-align: center;
     /* 360 / 12 = 30deg */
     transform: rotate(calc(30deg * var(--i)));
+}
+
+.relogio > span > b{
+    font-size: 2em;
+    opacity: 0.25;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.circulo{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+.circulo::before{
+    content: "";
+    position: absolute;
+    top: -8.5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--cores);
+    box-shadow: 0 0 20px var(--cores),
+    0 0 60px var(--cores);
+}
+
+.circulo2{
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+
+.circulo3{
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+
+.circulo > i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background-color: var(--cores);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+}
+
+.circulo:nth-child(1) i {
+    width: 2px;
+}
+
+.circulo:nth-child(2) i{
+    width: 6px;
 }

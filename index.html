@@ -10,6 +10,11 @@
 <body>
     <div class="conteiner">
         <div class="relogio">
+
+            <div class="circulo" style="--cores: #04fc43;" id="cs"><i></i></div>
+            <div class="circulo circulo2" style="--cores: #fee800;" id="cm"><i></i></div>
+            <div class="circulo circulo3" style="--cores: #ff2972;" id="cd"><i></i></div>
+
             <span style="--i:1;"><b>1</b></span>
             <span style="--i:2;"><b>2</b></span>
             <span style="--i:3;"><b>3</b></span>
@@ -24,5 +29,21 @@
             <span style="--i:12;"><b>12</b></span>
         </div>
     </div>
+
+    <script>
+        let cs = window.document.getElementById("cs")
+        let cm = window.document.getElementById("cm")
+        let cd = window.document.getElementById("cd")
+
+        let day = new Date();
+        let hh = day.getHours() * 30;
+        let mm = day.getMinutes() * 6;
+        let ss = day.getSeconds() * 6;
+        
+        cs.style.transform = `rotateZ(${ss}deg)`;
+        cm.style.transform = `rotateZ(${mm}deg)`;
+        cd.style.transform = `rotateZ(${hh+(mm/12)}deg)`
+
+    </script>
 </body>
 </html>
