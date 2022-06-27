@@ -19,7 +19,6 @@ body{
 
 .conteiner{
     position: relative;
-    /* min-height: 500px; */
     background-color: #2f363e;
     border-radius: 20px;
     border-top-left-radius: 225px;
@@ -184,4 +183,64 @@ div#tempo > div:nth-child(2)::after{
     50%{
         opacity: 0;
     }
+}
+
+@media(max-width: 500px){
+    .conteiner{
+        width: 300px;
+        height: 410px;
+    }
+
+    .relogio{
+        width: 300px;
+        height: 300px;
+    }
+
+    .circulo{
+        width: 170px;
+        height: 170px;
+    }
+
+    .circulo::before{
+        width: 11px;
+        height: 11px;
+    }
+
+    .circulo2{
+        width: 130px;
+        height: 130px;
+    }
+
+    .circulo3{
+        width: 90px;
+        height: 90px;
+    }
+
+    .circulo > i{
+        width: 6px;
+        height: 50%;
+        transform: scaleY(0.6);
+    }
+
+    .circulo:nth-child(1) i {
+        width: 2px;
+    }
+    
+    .circulo:nth-child(2) i{
+        width: 6px;
+    }
+
+    /*digital*/
+
+    div#tempo{
+        padding: 6px 12px;
+        font-size: 1.3em;
+    }
+
+    div#tempo > div{
+        width: 40px;
+    }
+
+    
+
 }
