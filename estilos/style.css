@@ -57,5 +57,13 @@ body{
     background-color: #2f363e;
     border: 3px solid white;
     border-radius: 50%;
+}
 
+.relogio > span{
+    position: absolute;
+    inset: 20px;
+    color: white;
+    text-align: center;
+    /* 360 / 12 = 30deg */
+    transform: rotate(calc(30deg * var(--i)));
 }
