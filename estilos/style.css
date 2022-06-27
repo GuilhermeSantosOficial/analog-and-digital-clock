@@ -24,13 +24,15 @@ body{
     border-radius: 20px;
     border-top-left-radius: 225px;
     border-top-right-radius: 225px;
-    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.75),10px 10px 70px rgba(0, 0, 0, 0.25),
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.75),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
     inset 5px 5px 10px rgba(0, 0, 0, 0.5),
-    inset 5px 5px 20px rgba(0, 0, 0, 0.2),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .relogio{
@@ -41,7 +43,7 @@ body{
     border-radius: 50%;
     box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25),
     inset 5px 5px 10px rgba(0, 0, 0, 0.5),
-    inset 5px 5px 20px rgba(0, 0, 0, 0.2),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
@@ -129,4 +131,57 @@ body{
 
 .circulo:nth-child(2) i{
     width: 6px;
+}
+
+/* Relógio digital */
+
+div#tempo{
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+div#tempo > div{
+    position: relative;
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--cores);
+}
+
+div#tempo > div:nth-child(1)::after,
+div#tempo > div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+
+div#tempo > div:last-child{
+    display: flex;
+    font-size: 0.5em;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+div#tempo > div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
 }
